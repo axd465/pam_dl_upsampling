@@ -15,4 +15,5 @@ source activate tf
 **Docker**
 ```
 docker pull axd465/pam_dl_upsampling:latest
+docker run -it --rm --gpus all -u root -p 8888:8888 axd465/pam_dl_upsampling:latest
 ```
