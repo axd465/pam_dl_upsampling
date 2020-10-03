@@ -4,7 +4,6 @@ assert '2.' in tf.__version__  # make sure you're using tf 2.0
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-import sklearn
 import skimage
 from skimage import exposure, transform
 import cv2 as cv

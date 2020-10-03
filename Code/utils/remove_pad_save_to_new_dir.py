@@ -4,9 +4,7 @@ import matplotlib.pyplot as plt
 import math
 import string
 import pandas as pd
-import sklearn
 import skimage
-import cv2 as cv
 import os
 import re
 import datetime
