@@ -11,7 +11,7 @@ import imageio
 from pathlib import Path
 from PIL import Image
 from functools import reduce
-import keras_preprocessing.image
+from keras_preprocessing import image
 from utils.model_utils import normalize
 
 def load_and_crop_img(path, grayscale=False, color_mode='rgb', target_size=None, interpolation='nearest'):
@@ -41,14 +41,14 @@ def load_and_crop_img(path, grayscale=False, color_mode='rgb', target_size=None,
     interpolation, crop = interpolation.split(":") if ":" in interpolation else (interpolation, "none")  
 
     if crop == "none":
-        return keras_preprocessing.image.utils.load_img(path, 
+        return image.utils.load_img(path, 
                                                         grayscale=grayscale, 
                                                         color_mode=color_mode, 
                                                         target_size=target_size,
                                                         interpolation=interpolation)
 
     # Load original size image using Keras
-    img = keras_preprocessing.image.utils.load_img(path, 
+    img = image.utils.load_img(path, 
                                                    grayscale=grayscale, 
                                                    color_mode=color_mode, 
                                                    target_size=None, 
@@ -74,11 +74,11 @@ def load_and_crop_img(path, grayscale=False, color_mode='rgb', target_size=None,
             if crop not in ["center", "random"]:
                 raise ValueError('Invalid crop method {} specified.', crop)
 
-            if interpolation not in keras_preprocessing.image.utils._PIL_INTERPOLATION_METHODS:
+            if interpolation not in image.utils._PIL_INTERPOLATION_METHODS:
                 raise ValueError(
                     'Invalid interpolation method {} specified. Supported '
                     'methods are {}'.format(interpolation,
-                        ", ".join(keras_preprocessing.image.utils._PIL_INTERPOLATION_METHODS.keys())))
+                        ", ".join(image.utils._PIL_INTERPOLATION_METHODS.keys())))
             
 
             #width, height = img.size
@@ -119,5 +119,5 @@ def load_img(path, grayscale=False, color_mode='rgb', target_size=None, interpol
     array = np.array(array, dtype=np.float32)
     return array
 # Monkey patch
-keras_preprocessing.image.iterator.load_img = load_and_crop_img
-keras_preprocessing.image.utils.load_img = load_img
+image.iterator.load_img = load_and_crop_img
+image.utils.load_img = load_img

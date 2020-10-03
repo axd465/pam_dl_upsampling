@@ -7,7 +7,6 @@ import os
 import datetime
 import scipy
 from skimage import exposure
-import scipy.io as sio
 import random
 import shutil
 import PIL

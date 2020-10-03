@@ -1,0 +1,4 @@
+Dockerfile
+.dockerignore
+.ipynb_checkpoints
+__pycache__

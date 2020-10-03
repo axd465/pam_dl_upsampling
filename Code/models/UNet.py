@@ -2,18 +2,16 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-import sklearn
 import os
-import scipy.io as sio
 import h5py
 import random
 import shutil
 import PIL
 import imageio
-import keras.backend as K
+import tensorflow.keras.backend as K
 from pathlib import Path
 from PIL import Image
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras import Model
 from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Add, Input
 from tensorflow.keras.layers import BatchNormalization, UpSampling2D, Concatenate, Conv2DTranspose

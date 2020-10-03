@@ -6,9 +6,8 @@ __pycache__
 *.pyc
 **/*.ipynb_checkpoints/
 */.ipynb_checkpoints/*.ipynb
-**/*.jpg
-**/*.tif
-**/*.png
+#**/*.jpg
+#**/*.png
 saved_model*
 figures*
 *patchwork_test*
