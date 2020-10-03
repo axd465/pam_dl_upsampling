@@ -14,6 +14,5 @@ source activate tf
 
 **Docker**
 ```
-pip install jupyter-repo2docker
-jupyter-repo2docker https://github.com/axd465/pam_dl_upsampling
+docker pull axd465/pam_dl_upsampling:latest
 ```
